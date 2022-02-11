@@ -25,6 +25,7 @@ import com.yuyakaido.android.cardstackview.StackFrom;
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting;
 
 import java.util.List;
+import java.util.Locale;
 
 
 public class HomeFragment extends Fragment implements CardStackListener {
@@ -78,7 +79,8 @@ public class HomeFragment extends Fragment implements CardStackListener {
         NewsRepository repository = new NewsRepository();
         viewModel = new ViewModelProvider(this, new
                 NewsViewModelFactory(repository)).get(HomeViewModel.class);
-        viewModel.setCountryInput("us");
+        // support machine's language, not hard code to us anymore
+        viewModel.setCountryInput(Locale.getDefault().getCountry());
 
         // livedata<NewsResponse>
         viewModel

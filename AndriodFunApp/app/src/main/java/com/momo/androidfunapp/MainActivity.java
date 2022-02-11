@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         ).build();
 
         NavigationUI.setupWithNavController(navView, navController);
-        NavigationUI.setupActionBarWithNavController(this, navController);
+        // do not use action bar no more
+//        NavigationUI.setupActionBarWithNavController(this, navController);
 
 //        NewsAPI api = RetrofitClient.newInstance().create(NewsAPI.class);
 //        api.getTopHeadlines("US").enqueue(new Callback<NewsResponse>() {
